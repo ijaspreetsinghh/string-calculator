@@ -39,4 +39,7 @@ describe("String Calculator", () => {
   test("should throw an exception for unsupported operand", () => {
     expect(() => Add("2,xyz,3")).toThrow("unsupported operand xyz");
   });
+  test("should throw an exception for multiple unsupported operands", () => {
+    expect(() => Add("2,abc,3,def")).toThrow("unsupported operand abc, def");
+  });
 });
