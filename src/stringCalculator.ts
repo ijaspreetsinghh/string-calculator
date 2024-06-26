@@ -8,7 +8,9 @@ export function Add(numbers: string): number {
 
   if (numbers.startsWith("//")) {
     const delimiterEndIndex = numbers.indexOf("\n");
-    delimiter = new RegExp(numbers.substring(2, delimiterEndIndex));
+    let customDelimiter = numbers.substring(2, delimiterEndIndex);
+    customDelimiter = customDelimiter.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    delimiter = new RegExp(customDelimiter);
     numString = numbers.substring(delimiterEndIndex + 1);
   }
 
