@@ -18,4 +18,7 @@ describe("String Calculator", () => {
   test("should handle an unknown number of numbers", () => {
     expect(Add("1,2,3,4")).toBe(10);
   });
+  test("should handle different delimiters", () => {
+    expect(Add("//;\n1;2")).toBe(3);
+  });
 });
