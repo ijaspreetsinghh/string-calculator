@@ -33,4 +33,7 @@ describe("String Calculator", () => {
   test("should ignore numbers greater than 1000", () => {
     expect(Add("2,1001")).toBe(2);
   });
+  test("should handle a mix of valid and ignored numbers", () => {
+    expect(Add("2,1001,3,1002")).toBe(5);
+  });
 });
