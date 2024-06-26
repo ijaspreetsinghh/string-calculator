@@ -4,9 +4,5 @@ export function Add(numbers: string): number {
   }
 
   const numberArray = numbers.split(",").map(Number);
-
-  if (numberArray.length === 1) {
-    return numberArray[0];
-  }
-  return 0;
+  return numberArray.reduce((sum, num) => sum + num, 0);
 }

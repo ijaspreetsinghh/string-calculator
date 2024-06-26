@@ -8,4 +8,8 @@ describe("String Calculator", () => {
   test("should return the number itself for a single number", () => {
     expect(Add("1")).toBe(1);
   });
+
+  test("should return the sum of two numbers", () => {
+    expect(Add("1,2")).toBe(3);
+  });
 });
