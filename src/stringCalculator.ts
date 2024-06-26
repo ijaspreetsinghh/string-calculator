@@ -23,5 +23,12 @@ export function Add(numbers: string): number {
     );
   }
 
-  return numberArray.reduce((sum, num) => sum + num, 0);
+  const invalidOperands = numberArray.filter((num) => isNaN(num));
+  if (invalidOperands.length > 0) {
+    throw new Error(`unsupported operand ${invalidOperands.join(", ")}`);
+  }
+
+  return numberArray
+    .filter((num) => num <= 1000) // Ignore numbers greater than 1000
+    .reduce((sum, num) => sum + num, 0);
 }
