@@ -36,4 +36,7 @@ describe("String Calculator", () => {
   test("should handle a mix of valid and ignored numbers", () => {
     expect(Add("2,1001,3,1002")).toBe(5);
   });
+  test("should throw an exception for unsupported operand", () => {
+    expect(() => Add("2,xyz,3")).toThrow("unsupported operand xyz");
+  });
 });
