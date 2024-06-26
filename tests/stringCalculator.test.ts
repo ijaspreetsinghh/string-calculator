@@ -42,4 +42,9 @@ describe("String Calculator", () => {
   test("should throw an exception for multiple unsupported operands", () => {
     expect(() => Add("2,abc,3,def")).toThrow("unsupported operand abc, def");
   });
+  test("should throw an exception with all negative numbers listed", () => {
+    expect(() => Add("//;\n1;-2;3;-4")).toThrow(
+      "negative numbers not allowed -2, -4"
+    );
+  });
 });
