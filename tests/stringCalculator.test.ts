@@ -15,4 +15,7 @@ describe("String Calculator", () => {
   test("should handle new line characters as separators", () => {
     expect(Add("1\n2,3")).toBe(6);
   });
+  test("should handle an unknown number of numbers", () => {
+    expect(Add("1,2,3,4")).toBe(10);
+  });
 });
