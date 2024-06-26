@@ -12,4 +12,7 @@ describe("String Calculator", () => {
   test("should return the sum of two numbers", () => {
     expect(Add("1,2")).toBe(3);
   });
+  test("should handle new line characters as separators", () => {
+    expect(Add("1\n2,3")).toBe(6);
+  });
 });

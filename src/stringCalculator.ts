@@ -3,6 +3,7 @@ export function Add(numbers: string): number {
     return 0;
   }
 
-  const numberArray = numbers.split(",").map(Number);
+  const delimiters = /,|\n/;
+  const numberArray = numbers.split(delimiters).map(Number);
   return numberArray.reduce((sum, num) => sum + num, 0);
 }
